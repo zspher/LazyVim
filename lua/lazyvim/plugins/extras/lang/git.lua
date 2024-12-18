@@ -20,4 +20,21 @@ return {
       table.insert(opts.sources, { name = "git" })
     end,
   },
+
+  {
+    "saghen/blink.cmp",
+    optional = true,
+    dependencies = { "petertriho/cmp-git", "saghen/blink.compat" },
+    opts = {
+      sources = {
+        compat = { "git" },
+        providers = {
+          git = {
+            score_offset = -1,
+            async = true,
+          },
+        },
+      },
+    },
+  },
 }
